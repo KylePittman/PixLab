@@ -98,5 +98,38 @@ public class IntArrayWorker
       }
     }
   }
- 
+
+  /**
+   * count the number of occurences of a passed in value
+   */
+  public int getCount(int x){
+    int count = 0;
+    for (int i = 0; i < matrix.length; i++) {
+      for (int j = 0; j < matrix[0].length; j++) {
+        if(matrix[i][j] == x) count++;
+      }
+    }
+    return count;
+  }
+
+  /**
+   * find largest valuer in array
+   */
+  public int getLargest() {
+    int largest = matrix[0][0];
+    for (int i = 0; i < matrix.length; i++) {
+      for (int j = 0; j < matrix[0].length; j++) {
+        if(matrix[i][j] >= largest) largest = matrix[i][j];
+      }
+    }
+    return largest;
+  }
+
+  public int getColTotal(int i) {
+    int col = 0;
+    for (int j = 0; j < matrix.length; j++) {
+      col += matrix[j][i];
+    }
+    return col;
+  }
 }
